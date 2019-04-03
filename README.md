@@ -6,5 +6,5 @@ These scripts are for setting up a base Ubuntu machine to the way I like it. I t
 
 1. Run the following in a terminal:
     ```
-    wget -O https://raw.githubusercontent.com/berkeleybross/machine.ubuntu/master/bootstap.sh | bash
+    wget -O - https://raw.githubusercontent.com/berkeleybross/machine.ubuntu/master/bootstap.sh | bash
     ```
