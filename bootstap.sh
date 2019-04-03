@@ -9,12 +9,12 @@ fi
 cd ~/git/machine.ubuntu
 
 if [[ $(git status --porcelain) ]]; then
-    echo "Machine.ubuntu repository has local changes, aborting"
+    printf "\n\nMachine.ubuntu repository has local changes, aborting\n\n" >&2 
     exit 1
 fi
 
 git fetch --all
-git checkout master origin/master
+git reset origin/master
 
 ./step1.sh
 
