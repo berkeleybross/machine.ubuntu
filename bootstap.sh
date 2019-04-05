@@ -17,4 +17,5 @@ git fetch --all
 git reset origin/master
 
 ./step1.sh
+./cloneAllRepos.ps1
 
