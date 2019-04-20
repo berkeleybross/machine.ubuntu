@@ -1,6 +1,6 @@
 sudo snap install gitkraken
 sudo snap install spotify
-sudo snap install --classic vscode
+sudo snap install --classic code
 sudo snap install --classic rider
 sudo snap install node --channel=10/stable --classic
 
