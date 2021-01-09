@@ -16,6 +16,7 @@ Push-Location "$PsScriptRoot/scripts"
 try {
     sudo ./install-apps_ubuntu.sh
     ./install-vscode-extensions.ps1
+    ./clone-all-repos.ps1
 }
 finally {
     Pop-Location
