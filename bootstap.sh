@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 sudo apt-get install git -y
-mkdir -p ~/git
+mkdir -p ~/source
 
-if [ ! -d ~/git/machine.ubuntu ]; then
-    git clone https://github.com/berkeleybross/machine.ubuntu.git ~/git/machine.ubuntu
+if [ ! -d ~/source/setup ]; then
+    git clone https://github.com/berkeleybross/setup.git ~/git/setup
 fi
 
-cd ~/git/machine.ubuntu
+cd ~/git/setup
 
 if [[ $(git status --porcelain) ]]; then
     printf "\n\nMachine.ubuntu repository has local changes, aborting\n\n" >&2 
@@ -18,4 +18,3 @@ git reset origin/master
 
 ./step1.sh
 ./cloneAllRepos.ps1
-
