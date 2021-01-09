@@ -17,12 +17,6 @@ fi
 
 (
     cd ~/sources/setup
-
-    if [[ $(git status --porcelain) ]]; then
-        printf "\n\nSetup repository has local changes, aborting\n\n" >&2 
-        exit 1
-    fi
-
     sudo ./scripts/install-apps_ubuntu.sh
     ./run-all.ps1
 )
