@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
-sudo apt-get install git -y
-mkdir -p ~/source
+# This script downloads this repo and runs it, presuming a fresh Ubuntu 20.04 machine
 
-if [ ! -d ~/source/setup ]; then
-    git clone https://github.com/berkeleybross/setup.git ~/git/setup
-fi
+set -e
 
-cd ~/git/setup
-
-if [[ $(git status --porcelain) ]]; then
-    printf "\n\nMachine.ubuntu repository has local changes, aborting\n\n" >&2 
+if [[ $EUID -eq 0 ]]; then
+    echo "This script must NOT be run as root - we sudo as appropriate"
     exit 1
 fi
 
-git fetch --all
-git reset origin/master
+sudo apt-get install git -y
+mkdir -p ~/sources
 
-./step1.sh
-./cloneAllRepos.ps1
+if [ ! -d ~/sources/setup ]; then
+    git clone https://github.com/berkeleybross/setup.git ~/sources/setup
+fi
+
+(
+    cd ~/sources/setup
+    sudo ./scripts/install-apps_ubuntu.sh
+    ./run-all.ps1
+)
