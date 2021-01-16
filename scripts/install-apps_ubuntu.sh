@@ -29,4 +29,4 @@ snap install rider --classic
 snap install clion --classic
 
 # Tools
-apt install libnss3-tools # needed for certutil (to install dev-certs)
+apt install curl libnss3-tools -y # needed for certutil (to install dev-certs)
