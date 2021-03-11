@@ -13,6 +13,9 @@ apt-get update
 snap install chromium
 snap install spotify
 
+# C++ libraries
+apt-get install build-essential libgtkmm-3.0-dev cmake libx11-dev xserver-xorg-dev -y
+
 # SDKs and runtimes
 snap install docker
 snap install dotnet-sdk --channel=3.1/stable --classic
@@ -23,6 +26,7 @@ snap install powershell --classic
 snap install code --classic
 snap install gitkraken --classic
 snap install rider --classic
+snap install clion --classic
 
 # Tools
-apt install libnss3-tools # needed for certutil (to install dev-certs)
+apt install curl libnss3-tools -y # needed for certutil (to install dev-certs)
